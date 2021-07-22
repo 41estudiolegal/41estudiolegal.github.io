@@ -55,7 +55,7 @@ img.emoji {
 		<script>
 			/* <![CDATA[ */
 			var rcewpp = {
-				"ajax_url":"./wp-admin/admin-ajax.php",
+				"ajax_url":"./../../wp-admin/admin-ajax.php",
 				"nonce": "b8d0c0255e",
 				"home_url": "."
 			};
@@ -65,7 +65,7 @@ img.emoji {
 <link rel="https://api.w.org/" href="./../../wp-json/index.html">
 <link rel="alternate" type="application/json" href="./../../wp-json/wp/v2/pages/147/index.html">
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="./../../xmlrpc.php?rsd">
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="./../../wp-includes/wlwmanifest.xml"> 
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="./../../wp-includes/wlwmanifest.xml">
 <meta name="generator" content="WordPress 5.5.3">
 <link rel="canonical" href="./index.html">
 <link rel="shortlink" href="./../../index.html?p=147">
@@ -79,14 +79,14 @@ var image_save_msg='You are not allowed to save images!';
 function disableEnterKey(e)
 {
 	var elemtype = e.target.tagName;
-	
+
 	elemtype = elemtype.toUpperCase();
-	
+
 	if (elemtype == "TEXT" || elemtype == "TEXTAREA" || elemtype == "INPUT" || elemtype == "PASSWORD" || elemtype == "SELECT" || elemtype == "OPTION" || elemtype == "EMBED")
 	{
 		elemtype = 'TEXT';
 	}
-	
+
 	if (e.ctrlKey){
      var key;
      if(window.event)
@@ -109,61 +109,61 @@ function disableEnterKey(e)
 function wccp_free_iscontenteditable(e)
 {
 	var e = e || window.event; // also there is no e.target property in IE. instead IE uses window.event.srcElement
-  	
+
 	var target = e.target || e.srcElement;
 
 	var elemtype = e.target.nodeName;
-	
+
 	elemtype = elemtype.toUpperCase();
-	
+
 	var iscontenteditable = "false";
-		
+
 	if(typeof target.getAttribute!="undefined" ) iscontenteditable = target.getAttribute("contenteditable"); // Return true or false as string
-	
+
 	var iscontenteditable2 = false;
-	
+
 	if(typeof target.isContentEditable!="undefined" ) iscontenteditable2 = target.isContentEditable; // Return true or false as boolean
 
 	if(target.parentElement.isContentEditable) iscontenteditable2 = true;
-	
+
 	if (iscontenteditable == "true" || iscontenteditable2 == true)
 	{
 		if(typeof target.style!="undefined" ) target.style.cursor = "text";
-		
+
 		return true;
 	}
 }
 
 ////////////////////////////////////
 function disable_copy(e)
-{	
+{
 	var e = e || window.event; // also there is no e.target property in IE. instead IE uses window.event.srcElement
-	
+
 	var elemtype = e.target.tagName;
-	
+
 	elemtype = elemtype.toUpperCase();
-	
+
 	if (elemtype == "TEXT" || elemtype == "TEXTAREA" || elemtype == "INPUT" || elemtype == "PASSWORD" || elemtype == "SELECT" || elemtype == "OPTION" || elemtype == "EMBED")
 	{
 		elemtype = 'TEXT';
 	}
-	
+
 	if(wccp_free_iscontenteditable(e)) return true;
-	
+
 	var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
-	
+
 	var checker_IMG = '';
 	if (elemtype == "IMG" && checker_IMG == 'checked' && e.detail >= 2) {show_wpcp_message(alertMsg_IMG);return false;}
 	if (elemtype != "TEXT")
 	{
 		if (smessage !== "" && e.detail == 2)
 			show_wpcp_message(smessage);
-		
+
 		if (isSafari)
 			return true;
 		else
 			return false;
-	}	
+	}
 }
 
 //////////////////////////////////////////
@@ -178,7 +178,7 @@ function disable_copy_ie()
 	{
 		return false;
 	}
-}	
+}
 function reEnable()
 {
 	return true;
@@ -195,11 +195,11 @@ function disableSelection(target)
     //For IE This code will work
     if (typeof target.onselectstart!="undefined")
     target.onselectstart = disable_copy_ie;
-    
+
     //For Firefox This code will work
     else if (typeof target.style.MozUserSelect!="undefined")
     {target.style.MozUserSelect="none";}
-    
+
     //All other  (ie: Opera) This code will work
     else
     target.onmousedown=function(){return false}
@@ -219,11 +219,11 @@ function touchstart(e) {
   // also there is no e.target property in IE.
   // instead IE uses window.event.srcElement
   	var target = e.target || e.srcElement;
-	
+
 	elemtype = window.event.srcElement.nodeName;
-	
+
 	elemtype = elemtype.toUpperCase();
-	
+
 	if(!wccp_pro_is_passive()) e.preventDefault();
 	if (!timer) {
 		timer = setTimeout(onlongtouch, touchduration);
@@ -240,8 +240,8 @@ function touchend() {
 }
 
 onlongtouch = function(e) { //this will clear the current selection if anything selected
-	
-	if (elemtype != "TEXT" && elemtype != "TEXTAREA" && elemtype != "INPUT" && elemtype != "PASSWORD" && elemtype != "SELECT" && elemtype != "EMBED" && elemtype != "OPTION")	
+
+	if (elemtype != "TEXT" && elemtype != "TEXTAREA" && elemtype != "INPUT" && elemtype != "PASSWORD" && elemtype != "SELECT" && elemtype != "EMBED" && elemtype != "OPTION")
 	{
 		if (window.getSelection) {
 			if (window.getSelection().empty) {  // Chrome
@@ -256,7 +256,7 @@ onlongtouch = function(e) { //this will clear the current selection if anything 
 	}
 };
 
-document.addEventListener("DOMContentLoaded", function(event) { 
+document.addEventListener("DOMContentLoaded", function(event) {
     window.addEventListener("touchstart", touchstart, false);
     window.addEventListener("touchend", touchend, false);
 });
@@ -325,7 +325,7 @@ if(e)
 <link rel="icon" href="./../../wp-content/uploads/2020/05/cropped-Logo-41-Estudio-Legal-32x32.png" sizes="32x32">
 <link rel="icon" href="./../../wp-content/uploads/2020/05/cropped-Logo-41-Estudio-Legal-192x192.png" sizes="192x192">
 <link rel="apple-touch-icon" href="./../../wp-content/uploads/2020/05/cropped-Logo-41-Estudio-Legal-180x180.png">
-<meta name="msapplication-TileImage" content="./wp-content/uploads/2020/05/cropped-Logo-41-Estudio-Legal-270x270.png">
+<meta name="msapplication-TileImage" content="./../../wp-content/uploads/2020/05/cropped-Logo-41-Estudio-Legal-270x270.png">
 </head>
 
 <body class="page-template-default page page-id-147 page-child parent-pageid-22 wp-custom-logo wp-embed-responsive unselectable no-sidebar nav-float-right fluid-header separate-containers active-footer-widgets-3 nav-search-enabled header-aligned-left dropdown-hover elementor-default elementor-kit-47 elementor-page elementor-page-147" itemtype="https://schema.org/WebPage" itemscope>
@@ -342,7 +342,7 @@ if(e)
 				<div class="elementor-widget-container">
 					<div class="elementor-image">
 											<a href="./../../index.html">
-							<img width="500" height="138" alt="" loading="lazy" data-srcset="./wp-content/uploads/2020/10/Logo-Estudio-Legal-Original.png 500w, ./wp-content/uploads/2020/10/Logo-Estudio-Legal-Original-300x83.png 300w" data-src="./wp-content/uploads/2020/10/Logo-Estudio-Legal-Original.png" data-sizes="(max-width: 500px) 100vw, 500px" class="attachment-large size-large lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img width="500" height="138" src="./../../wp-content/uploads/2020/10/Logo-Estudio-Legal-Original.png" class="attachment-large size-large" alt="" loading="lazy" srcset="./../../wp-content/uploads/2020/10/Logo-Estudio-Legal-Original.png 500w, ./../../wp-content/uploads/2020/10/Logo-Estudio-Legal-Original-300x83.png 300w" sizes="(max-width: 500px) 100vw, 500px"></noscript>								</a>
+							<img width="500" height="138" alt="" loading="lazy" data-srcset="./../../wp-content/uploads/2020/10/Logo-Estudio-Legal-Original.png 500w, ./wp-content/uploads/2020/10/Logo-Estudio-Legal-Original-300x83.png 300w" data-src="./../../wp-content/uploads/2020/10/Logo-Estudio-Legal-Original.png" data-sizes="(max-width: 500px) 100vw, 500px" class="attachment-large size-large lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img width="500" height="138" src="./../../wp-content/uploads/2020/10/Logo-Estudio-Legal-Original.png" class="attachment-large size-large" alt="" loading="lazy" srcset="./../../wp-content/uploads/2020/10/Logo-Estudio-Legal-Original.png 500w, ./../../wp-content/uploads/2020/10/Logo-Estudio-Legal-Original-300x83.png 300w" sizes="(max-width: 500px) 100vw, 500px"></noscript>								</a>
 											</div>
 				</div>
 				</div>
@@ -447,20 +447,20 @@ if(e)
 					</div>
 		</div>
 		</div>
-		
+
 	<div id="page" class="hfeed site grid-container container grid-parent">
 				<div id="content" class="site-content">
-			
+
 	<div id="primary" class="content-area grid-parent mobile-grid-100 grid-100 tablet-grid-100">
 		<main id="main" class="site-main">
-			
+
 <article id="post-147" class="post-147 page type-page status-publish" itemtype="https://schema.org/CreativeWork" itemscope>
 	<div class="inside-article">
-		
+
 			<header class="entry-header">
 				<h1 class="entry-title" itemprop="headline">Derecho Mercantil y Comercial (Sociedades)</h1>			</header><!-- .entry-header -->
 
-		
+
 		<div class="entry-content" itemprop="text">
 					<div data-elementor-type="wp-page" data-elementor-id="147" class="elementor elementor-147" data-elementor-settings="[]">
 						<div class="elementor-inner">
@@ -474,7 +474,7 @@ if(e)
 						<div class="elementor-element elementor-element-4c5da54 elementor-widget elementor-widget-image" data-id="4c5da54" data-element_type="widget" data-widget_type="image.default">
 				<div class="elementor-widget-container">
 					<div class="elementor-image">
-										<img width="600" height="400" alt="" loading="lazy" data-srcset="./wp-content/uploads/2020/07/Artboard-641-ESTUDIO-LEGAL.jpg 600w, ./wp-content/uploads/2020/07/Artboard-641-ESTUDIO-LEGAL-300x200.jpg 300w" data-src="./wp-content/uploads/2020/07/Artboard-641-ESTUDIO-LEGAL.jpg" data-sizes="(max-width: 600px) 100vw, 600px" class="attachment-large size-large lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img width="600" height="400" src="./../../wp-content/uploads/2020/07/Artboard-641-ESTUDIO-LEGAL.jpg" class="attachment-large size-large" alt="" loading="lazy" srcset="./../../wp-content/uploads/2020/07/Artboard-641-ESTUDIO-LEGAL.jpg 600w, ./../../wp-content/uploads/2020/07/Artboard-641-ESTUDIO-LEGAL-300x200.jpg 300w" sizes="(max-width: 600px) 100vw, 600px"></noscript>											</div>
+										<img width="600" height="400" alt="" loading="lazy" data-srcset="./../../wp-content/uploads/2020/07/Artboard-641-ESTUDIO-LEGAL.jpg 600w, ./wp-content/uploads/2020/07/Artboard-641-ESTUDIO-LEGAL-300x200.jpg 300w" data-src="./../../wp-content/uploads/2020/07/Artboard-641-ESTUDIO-LEGAL.jpg" data-sizes="(max-width: 600px) 100vw, 600px" class="attachment-large size-large lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img width="600" height="400" src="./../../wp-content/uploads/2020/07/Artboard-641-ESTUDIO-LEGAL.jpg" class="attachment-large size-large" alt="" loading="lazy" srcset="./../../wp-content/uploads/2020/07/Artboard-641-ESTUDIO-LEGAL.jpg 600w, ./../../wp-content/uploads/2020/07/Artboard-641-ESTUDIO-LEGAL-300x200.jpg 300w" sizes="(max-width: 600px) 100vw, 600px"></noscript>											</div>
 				</div>
 				</div>
 						</div>
@@ -507,7 +507,7 @@ if(e)
 	</div>
 <!-- #primary -->
 
-	
+
 	</div>
 <!-- #content -->
 </div>
@@ -541,7 +541,7 @@ if(e)
 						<div class="elementor-element elementor-element-94b9db7 elementor-widget elementor-widget-image" data-id="94b9db7" data-element_type="widget" data-widget_type="image.default">
 				<div class="elementor-widget-container">
 					<div class="elementor-image">
-										<img width="514" height="422" alt="" loading="lazy" data-srcset="./wp-content/uploads/2020/05/Logo-41-Estudio-Legal.png 514w, ./wp-content/uploads/2020/05/Logo-41-Estudio-Legal-300x246.png 300w" data-src="./wp-content/uploads/2020/05/Logo-41-Estudio-Legal.png" data-sizes="(max-width: 514px) 100vw, 514px" class="attachment-full size-full lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img width="514" height="422" src="./../../wp-content/uploads/2020/05/Logo-41-Estudio-Legal.png" class="attachment-full size-full" alt="" loading="lazy" srcset="./../../wp-content/uploads/2020/05/Logo-41-Estudio-Legal.png 514w, ./../../wp-content/uploads/2020/05/Logo-41-Estudio-Legal-300x246.png 300w" sizes="(max-width: 514px) 100vw, 514px"></noscript>											</div>
+										<img width="514" height="422" alt="" loading="lazy" data-srcset="./../../wp-content/uploads/2020/05/Logo-41-Estudio-Legal.png 514w, ./wp-content/uploads/2020/05/Logo-41-Estudio-Legal-300x246.png 300w" data-src="./../../wp-content/uploads/2020/05/Logo-41-Estudio-Legal.png" data-sizes="(max-width: 514px) 100vw, 514px" class="attachment-full size-full lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img width="514" height="422" src="./../../wp-content/uploads/2020/05/Logo-41-Estudio-Legal.png" class="attachment-full size-full" alt="" loading="lazy" srcset="./../../wp-content/uploads/2020/05/Logo-41-Estudio-Legal.png 514w, ./../../wp-content/uploads/2020/05/Logo-41-Estudio-Legal-300x246.png 300w" sizes="(max-width: 514px) 100vw, 514px"></noscript>											</div>
 				</div>
 				</div>
 						</div>
@@ -559,7 +559,7 @@ if(e)
 						<div class="elementor-element elementor-element-d593b00 elementor-search-form--skin-minimal elementor-widget elementor-widget-search-form" data-id="d593b00" data-element_type="widget" data-settings="{&quot;skin&quot;:&quot;minimal&quot;}" data-widget_type="search-form.default">
 				<div class="elementor-widget-container">
 					<form class="elementor-search-form" role="search" action="./../../index.html" method="get">
-			 
+
 						<div class="elementor-search-form__container">
 									<div class="elementor-search-form__icon">
 						<i class="fa fa-search" aria-hidden="true"></i>
